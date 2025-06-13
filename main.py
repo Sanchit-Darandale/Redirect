@@ -25,67 +25,6 @@ async def show_redirect_page(code: str):
 async def show_advance_page(code: str):
     telegram_url = f"https://t.me/{bot}?start={code}"
     html_content = f"""
-    <!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>DSxSilent File Bot</title>
-  <script src="https://cdn.tailwindcss.com"></script>
-</head>
-<body class="bg-[#f3f8ff]">
-
-  <div class="min-h-screen flex items-center justify-center">
-    <div class="w-[75%] bg-white rounded-3xl shadow-lg p-6 md:p-10 flex flex-col justify-between min-h-screen">
-
-      <!-- Header with logo and toggle -->
-      <div class="flex justify-between items-center mb-6">
-        <div class="flex items-center gap-2">
-          <img src="https://freeimage.host/i/Fql2Myx" alt="Silen Logo" class="h-8 w-auto" />
-          <span class="text-lg font-medium">Sanchit</span>
-        </div>
-        <button id="modeToggle" class="bg-purple-500 text-white px-3 py-1 rounded-full text-sm">
-          🌙 Dark Mode
-        </button>
-      </div>
-
-      <!-- Main content -->
-      <div class="flex-1 flex flex-col items-center justify-center text-center">
-        <h2 class="text-xl font-bold text-[#2e49a3] mb-6">DSxSilent File Bot</h2>
-        <div class="w-24 h-24 bg-blue-300 rounded-full flex items-center justify-center mb-6">
-          <span class="text-4xl text-black">✓</span>
-        </div>
-        <button class="w-full bg-purple-600 hover:bg-purple-700 text-white font-semibold py-3 rounded-full transition">
-          Get File
-        </button>
-      </div>
-
-      <!-- Footer -->
-      <p class="text-center text-gray-500 text-sm mt-8">
-        Made with ❤️ by Sanchit
-      </p>
-
-    </div>
-  </div>
-
-  <!-- Toggle Mode Script -->
-  <script>
-    const toggleBtn = document.getElementById("modeToggle");
-    let dark = false;
-    toggleBtn.addEventListener("click", () => {{
-      document.body.classList.toggle("bg-[#1a1a1a]");
-      document.body.classList.toggle("text-white");
-      dark = !dark;
-      toggleBtn.innerHTML = dark ? "🌞 Light Mode" : "🌙 Dark Mode";
-    }});
-  </script>
-
-</body>
-</html>"""
-    return HTMLResponse(content=html_content)
-
-########₹₹#₹##########################
-"""
 <!DOCTYPE html>
 <html lang="en" data-theme="light">
 <head>
@@ -256,8 +195,7 @@ async def show_advance_page(code: str):
 <body>
     <div class="container">
         <div class="header">
-            <img src="https://freeimage.host/i/Fql2Myx" alt="Silent Ghost" />
-            <span>Sanchit</span>
+            <span>Silent Ghost ⚡</span>
         </div>
         <button class="toggle" id="toggleBtn" onclick="toggleTheme()">🖤 Dark Mode</button>
 
@@ -311,3 +249,4 @@ async def show_advance_page(code: str):
 </body>
 </html>
 """
+    return HTMLResponse(content=html_content)
