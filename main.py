@@ -10,19 +10,28 @@ BOTS = [
     "Silent_File_Store_3_Bot"
 ]
 
+last_bot = None  # Global variable to store the last selected bot
+
+def get_random_bot():
+    global last_bot
+    available_bots = [b for b in BOTS if b != last_bot]
+    bot = random.choice(available_bots)
+    last_bot = bot
+    return bot
+    
 @app.get("/")
 def dash():
     return "Moye Moye!"
 
 @app.get("/server/{code}", response_class=HTMLResponse)
 async def show_redirect_page(code: str):
-    bot = random.choice(BOTS)
+    bot = get_random_bot()
     telegram_url = f"https://t.me/{bot}?start={code}"
     return RedirectResponse(url=telegram_url)
 
 @app.get("/advance/{code}", response_class=HTMLResponse)
 async def show_advance_page(code: str):
-    bot = random.choice(BOTS)
+    bot = get_random_bot()
     telegram_url = f"https://t.me/{bot}?start={code}"
     html_content = f"""
 <!DOCTYPE html>
@@ -206,7 +215,7 @@ async def show_advance_page(code: str):
             <div class="emoji" id="emoji">✓</div>
         </div>
 
-        <button id="getFileBtn" onclick="window.location.href='{telegram_url}'">Get File</button>
+        <button id="getFileBtn">Get Telegram File</button>
         <footer>Made with ❤️ by Sanchit</footer>
     </div>
 
@@ -215,8 +224,9 @@ async def show_advance_page(code: str):
         const timer = document.getElementById("timer");
         const button = document.getElementById("getFileBtn");
         const circle = document.querySelector(".circle");
-        const emoji = document.getElementById("emoji");
-
+        const emoji = document.getElementById("emoji"); 
+        const telegramUrl = '{telegram_url}';
+    
         const interval = setInterval(() => {{
             seconds--;
             if (seconds >= 0) {{
@@ -230,6 +240,7 @@ async def show_advance_page(code: str):
                 emoji.style.display = "block";
                 button.disabled = false;
                 button.classList.add("active");
+                button.onclick = () => window.location.href = telegramUrl;
             }}
         }}, 1000);
 
