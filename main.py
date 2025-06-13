@@ -1,6 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import HTMLResponse, RedirectResponse
-import random
+import random, uvicorn
 
 app = FastAPI()
 
@@ -261,3 +261,7 @@ async def show_advance_page(code: str):
 </html>
 """
     return HTMLResponse(content=html_content)
+
+
+if __name__ == "__main__":
+    uvicorn.run("main:app", host="0.0.0.0", port=10000, reload=False)
