@@ -1,11 +1,17 @@
 from fastapi import FastAPI
-from fastapi.responses import RedirectResponse, HTMLResponse
-from mangum import Mangum
+from fastapi.responses import HTMLResponse
 import random
 
 app = FastAPI()
 
-BOTS = ["Silent_File_Store_6_Bot", "Silent_File_Store_1_Bot", "Silent_File_Store_3_Bot"]
+BOTS = [
+    "Silent_File_Store_6_Bot",
+    "Silent_File_Store_1_Bot",
+    "Silent_File_Store_3_Bot"
+]
+
+bot = random.choice(BOTS)
+telegram_url = f"https://t.me/{bot}?start={code}"
 
 @app.get("/")
 def dash():
@@ -13,9 +19,10 @@ def dash():
 
 @app.get("/server/{code}", response_class=HTMLResponse)
 async def show_redirect_page(code: str):
-    bot = random.choice(BOTS)
-    telegram_url = f"https://t.me/{bot}?start={code}"
-
+    return RedirectResponse(url=telegram_url)
+    
+@app.get("/advance/{code}", response_class=HTMLResponse)
+async def show_redirect_page(code: str):
     html_content = f"""
     <!DOCTYPE html>
     <html lang="en">
@@ -124,5 +131,4 @@ async def show_redirect_page(code: str):
     """
 
     return HTMLResponse(content=html_content)
-
-handler = Mangum(app)
+    
