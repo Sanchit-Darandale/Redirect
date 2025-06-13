@@ -11,7 +11,6 @@ BOTS = [
 ]
 
 bot = random.choice(BOTS)
-telegram_url = f"https://t.me/{bot}?start={code}"
 
 @app.get("/")
 def dash():
@@ -19,10 +18,12 @@ def dash():
 
 @app.get("/server/{code}", response_class=HTMLResponse)
 async def show_redirect_page(code: str):
+    telegram_url = f"https://t.me/{bot}?start={code}"
     return RedirectResponse(url=telegram_url)
     
 @app.get("/advance/{code}", response_class=HTMLResponse)
 async def show_redirect_page(code: str):
+    telegram_url = f"https://t.me/{bot}?start={code}"
     html_content = f"""
     <!DOCTYPE html>
     <html lang="en">
