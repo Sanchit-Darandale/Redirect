@@ -117,7 +117,7 @@ async def show_advance_page(code: str):
                 if (seconds >= 0) {{
                     timer.textContent = seconds;
                     let angle = (10 - seconds) * 36;
-                    circle.style.background = `conic-gradient(#3f51b5 ${angle}deg, #ccc ${angle}deg)`;
+                    circle.style.background = `conic-gradient(#3f51b5 ${{angle}}deg, #ccc ${{angle}}deg)`;
                 }}
                 if (seconds <= 0) {{
                     clearInterval(interval);
