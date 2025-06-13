@@ -202,9 +202,10 @@ data-theme="light">
 <body>  
     <div class="container">  
         <div class="header">  
-            <span>Silent Ghost ⚡</span>  
+            <span><a href="https://t.me/THE_DS_OFFICIAL">ՏIᒪᗴᑎT ᘜᕼOՏT ⚡️</a></span>  
         </div>  
-        <button class="toggle" id="toggleBtn" onclick="toggleTheme()">🖤 Dark Mode</button>  <h1>DSxSilent File Bot</h1>  
+        <button class="toggle" id="toggleBtn" onclick="toggleTheme()">🖤 Dark Mode</button>  
+        <h1>DS FileStore Bot System</h1>  
 
     <div class="timer-container">  
         <div class="circle" id="timer">10</div>  
