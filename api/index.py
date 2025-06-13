@@ -1,5 +1,6 @@
 from fastapi import FastAPI
 from fastapi.responses import RedirectResponse, HTMLResponse
+from mangum import Mangum
 import random
 
 app = FastAPI()
@@ -123,3 +124,5 @@ async def show_redirect_page(code: str):
     """
 
     return HTMLResponse(content=html_content)
+
+handler = Mangum(app)
