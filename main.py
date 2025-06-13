@@ -82,6 +82,7 @@ async def show_advance_page(code: str):
 
 </body>
 </html>"""
+    return HTMLResponse(content=html_content)
 
 ########₹₹#₹##########################
 """
@@ -310,4 +311,3 @@ async def show_advance_page(code: str):
 </body>
 </html>
 """
-    return HTMLResponse(content=html_content)
