@@ -5,7 +5,7 @@ import random
 app = FastAPI()
 
 # List of bot usernames
-BOTS = ["Silent_File_Store_6_Bot", "Silent_File_Store_1_Bot", "@Silent_File_Store_3_Bot"]
+BOTS = ["Silent_File_Store_6_Bot", "Silent_File_Store_1_Bot", "Silent_File_Store_3_Bot"]
 
 @app.get("/")
 def dash():
