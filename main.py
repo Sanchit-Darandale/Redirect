@@ -20,7 +20,7 @@ def get_random_bot():
     return bot
     
 @app.get("/")
-def dash():
+async def home():
     return "Moye Moye!"
 
 @app.get("/server/{code}", response_class=HTMLResponse)
@@ -208,7 +208,7 @@ async def show_advance_page(code: str):
         </div>
         <button class="toggle" id="toggleBtn" onclick="toggleTheme()">🖤 Dark Mode</button>
 
-        <h1>DSxSilent File Bot</h1>
+        <h1>DS FileStore Bot System</h1>
 
         <div class="timer-container">
             <div class="circle" id="timer">10</div>
