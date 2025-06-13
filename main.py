@@ -202,7 +202,7 @@ data-theme="light">
 <body>  
     <div class="container">  
         <div class="header">  
-            <span><a href="https://t.me/THE_DS_OFFICIAL">ՏIᒪᗴᑎT ᘜᕼOՏT ⚡️</a></span>  
+            <span><b>ՏIᒪᗴᑎT ᘜᕼOՏT ⚡️</b></span>  
         </div>  
         <button class="toggle" id="toggleBtn" onclick="toggleTheme()">🖤 Dark Mode</button>  
         <h1>DS FileStore Bot System</h1>  
@@ -213,7 +213,7 @@ data-theme="light">
     </div>  
 
     <button id="getFileBtn">Get Telegram File</button>  
-    <footer>Made with ❤️ by Sanchit</footer>  
+    <footer>Made with <a href="https://t.me/THE_DS_OFFICIAL">❤️</a> by Sanchit</footer>  
 </div>  
 
 <script>  
