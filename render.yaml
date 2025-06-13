@@ -1,9 +1,13 @@
 services:
   - type: web
-    name: keep-alive-fastapi
-    env: python
-    buildCommand: ""
+    name: fastapi-redirect-bot
+    runtime: python
+    buildCommand: "pip install -r requirements.txt"
     startCommand: uvicorn main:app --host 0.0.0.0 --port 10000
     envVars:
       - key: PORT
         value: 10000
+    plan: free
+    region: oregon    
+    autoDeploy: true
+
