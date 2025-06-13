@@ -22,7 +22,7 @@ async def show_redirect_page(code: str):
     return RedirectResponse(url=telegram_url)
     
 @app.get("/advance/{code}", response_class=HTMLResponse)
-async def show_redirect_page(code: str):
+async def show_advance_page(code: str):
     telegram_url = f"https://t.me/{bot}?start={code}"
     html_content = f"""
     <!DOCTYPE html>
