@@ -10,19 +10,19 @@ BOTS = [
     "Silent_File_Store_3_Bot"
 ]
 
-bot = random.choice(BOTS)
-
 @app.get("/")
 def dash():
     return "Moye Moye!"
 
 @app.get("/server/{code}", response_class=HTMLResponse)
 async def show_redirect_page(code: str):
+    bot = random.choice(BOTS)
     telegram_url = f"https://t.me/{bot}?start={code}"
     return RedirectResponse(url=telegram_url)
 
 @app.get("/advance/{code}", response_class=HTMLResponse)
 async def show_advance_page(code: str):
+    bot = random.choice(BOTS)
     telegram_url = f"https://t.me/{bot}?start={code}"
     html_content = f"""
 <!DOCTYPE html>
