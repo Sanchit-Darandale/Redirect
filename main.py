@@ -32,7 +32,9 @@ async def show_advance_page(code: str):
     telegram_url = f"https://t.me/{bot}?start={code}"
     html_content = f"""
 
-<!DOCTYPE html>  <html lang="en" data-theme="light">  
+<!DOCTYPE html>  
+<html lang="en" 
+data-theme="light">  
 <head>  
     <meta charset="UTF-8" />  
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>  
@@ -255,7 +257,7 @@ async def show_advance_page(code: str):
 </body>  
 </html>  
 """  
-    return HTMLResponse(content=html_content)  Check for syntax error
+    return HTMLResponse(content=html_content)  
 
 
 
